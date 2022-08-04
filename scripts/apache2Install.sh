@@ -9,5 +9,5 @@ if [ $? -gt 0 ]; then
    sudo systemctl start apache2
    sudo systemctl enable apache2
 else
-   echo " Apcahe2 is already installed"
+   echo " Apache2 is already installed"
 fi
