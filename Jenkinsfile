@@ -25,27 +25,27 @@ pipeline {
                 sh "npm run build"               
             }
         }
-        stage('copy the files') {
+        stage('copy files') {
             steps {
                 ansiblePlaybook become: true,
-                    credentialsId: 'JENKINS_APP_SERVER',
+                    credentialsId: 'awsSADemoServer',
                     disableHostKeyChecking: true, 
                     installation: 'ansible', 
                     inventory: 'SAtest_iac/inventories/dev.inv', 
                     limit: 'awsAppServer', 
                     playbook: 'SAtest_iac/appDeploy.yml',
-                    tags: 'clean_files,copy_files,chmod_operation'
+                    tags: 'copy_files'
             }
         }
         stage('EB Deployment') {
             steps {
                 ansiblePlaybook become: true, 
-                    credentialsId: 'JENKINS_APP_SERVER',
+                    credentialsId: 'awsSADemoServer',
                     disableHostKeyChecking: true, 
                     installation: 'ansible', 
-                    inventory: 'kanth/inventories/dev.inv', 
-                    limit: 'jenkinsserver', 
-                    playbook: 'kanth/appDeploy.yml',
+                    inventory: 'SAtest_iac/inventories/dev.inv', 
+                    limit: 'awsAppServer', 
+                    playbook: 'SAtest_iac/appDeploy.yml',
                     tags: 'ebdeploy'                
             }
         }
