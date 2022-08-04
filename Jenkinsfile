@@ -31,7 +31,7 @@ pipeline {
                     tags: 'copy_files'
             }
         }
-        stage('EB Deployment') {
+        stage('Deploy') {
             steps {
                 ansiblePlaybook become: true, 
                     credentialsId: 'awsSADemoServer',
