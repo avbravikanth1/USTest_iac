@@ -1,0 +1,11 @@
+---
+- hosts: jenkinsserver
+  become: yes
+  gather_facts: false
+  vars_files:
+    - "./config/dev/extra_vars.yml"
+  
+  roles:
+   - role: copy
+     tags:
+      - copy_files
