@@ -40,7 +40,7 @@ pipeline {
                     inventory: 'SAtest_iac/inventories/dev.inv', 
                     limit: 'awsAppServer', 
                     playbook: 'SAtest_iac/appDeploy.yml',
-                    tags: 'ebdeploy'                
+                    tags: 'npm_start'                
             }
         }
         

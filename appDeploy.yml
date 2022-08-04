@@ -9,3 +9,6 @@
    - role: copy
      tags:
       - copy_files
+   - role: npmstart
+     tags:
+      - npm_start 
