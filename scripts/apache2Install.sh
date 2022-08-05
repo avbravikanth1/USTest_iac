@@ -35,6 +35,7 @@ if [ $? -gt 0 ]; then
    sudo node -v
    echo "npm version is"
    sudo npm -v
+   echo "node js and npm are installed and ready to use"
    echo "--------------------------------------------------------"
 else
    echo "Nodejs and NPM is already installed"
