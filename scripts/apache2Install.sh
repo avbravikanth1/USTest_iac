@@ -9,8 +9,13 @@ if [ $? -gt 0 ]; then
    echo "Enabling apache2"
    sudo systemctl enable apache2 > /dev/null 2>&1
    echo "--------------------------------------------"
-   echo "Apache2 is installed and ready to use. Good to go"
+   echo "Apache2 installation completed and moving to modules enabling"
    echo "--------------------------------------------"
+   echo "Enabling Apache Header module"
+   sudo a2enmod headers
+   echo "Enabling proxy http module"
+   sudo a2enmod proxy_http
+   echo "Module enabling is completed"
 else
    echo " Apache2 is already installed"
 fi
