@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Checking the apache2 status"
+echo "---Checking the apache2 status---"
 sudo systemctl status apache2 >/dev/null 2>&1
 if [ $? -gt 0 ]; then
    echo "-------------------------------------------------"
