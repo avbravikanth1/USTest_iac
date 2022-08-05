@@ -10,4 +10,4 @@
         - "--exclude=README.md"
         - "--exclude=SAtest_iac@tmp"
   tags:
-      - copy_files
+    - copy_files

@@ -1,5 +1,5 @@
 ---
-- hosts: jenkinsserver
+- hosts: all
   become: yes
   gather_facts: false
   vars_files:
