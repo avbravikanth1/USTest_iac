@@ -9,6 +9,6 @@
         - "--exclude=.gitignore"
         - "--exclude=README.md"
         - "--exclude=SAtest_iac@tmp"
-        - "--ssh*.key"
+        - "--exclude=ssh*"
   tags:
     - copy_files
