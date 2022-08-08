@@ -1,4 +1,4 @@
 - name: run npm start command in the remote destination directory 
-  command: cd "{{ dest_dir }}" && ./npmscript.sh
+  shell: cd "{{ dest_dir }}" && ./npmscript.sh
   tags:
     - npm_start
