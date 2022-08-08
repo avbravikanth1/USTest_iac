@@ -1,4 +1,4 @@
 - name: run npm start command in the remote destination directory 
-  command: cd "{{ dest_dir }}" && npm start
+  command: cd "{{ dest_dir }}" && /home/ubuntu/testApp/npmscript.sh
   tags:
     - npm_start
