@@ -5,4 +5,4 @@
 10.2.8.50 ansible_user=dradmin
 
 [awsAppServer]
-54.91.93.31 ansible_user=ubuntu
+54.177.78.233 ansible_user=ubuntu

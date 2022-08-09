@@ -4,12 +4,12 @@ pipeline {
         stage("SCM Checkout") {
             steps {
                 git branch: 'master',
-                    credentialsId: "RajaGithubAccess",            
-                    url: 'https://github.com/rajasekhar2304/my-react-app.git'
-                dir("SAtest_iac") {
+                    credentialsId: "raviGitAccess",            
+                    url: 'https://github.com/avbravikanth1/my-react-app.git'
+                dir("Test_iac") {
                     git branch: 'master',
-                    credentialsId: "RajaGithubAccess",
-                    url: 'https://github.com/rajasekhar2304/SAtest_iac.git'
+                    credentialsId: "raviGitAccess",
+                    url: 'https://github.com/avbravikanth1/USTest_iac.git
                 }
             }  
         }             
@@ -22,24 +22,24 @@ pipeline {
         stage('copy files') {
             steps {
                 ansiblePlaybook become: true,
-                    credentialsId: 'awsSADemoServer',
+                    credentialsId: 'awsUsDemo',
                     disableHostKeyChecking: true, 
                     installation: 'ansible', 
-                    inventory: 'SAtest_iac/inventories/dev.inv', 
+                    inventory: 'Test_iac/inventories/dev.inv', 
                     limit: 'awsAppServer', 
-                    playbook: 'SAtest_iac/appDeploy.yml',
+                    playbook: 'Test_iac/appDeploy.yml',
                     tags: 'copy_files'
             }
         }
         stage('Deploy') {
             steps {
                 ansiblePlaybook become: true, 
-                    credentialsId: 'awsSADemoServer',
+                    credentialsId: 'awsUsDemo',
                     disableHostKeyChecking: true, 
                     installation: 'ansible', 
-                    inventory: 'SAtest_iac/inventories/dev.inv', 
+                    inventory: 'Test_iac/inventories/dev.inv', 
                     limit: 'awsAppServer', 
-                    playbook: 'SAtest_iac/appDeploy.yml',
+                    playbook: 'Test_iac/appDeploy.yml',
                     tags: 'npm_start'                
             }
         }

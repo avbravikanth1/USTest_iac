@@ -4,11 +4,11 @@
     dest: "{{ dest_dir }}"
     rsync_opts:
         - "--exclude=node_modules"
-        - "--exclude=SAtest_iac"
+        - "--exclude=Test_iac"
         - "--exclude=.git"
         - "--exclude=.gitignore"
         - "--exclude=README.md"
-        - "--exclude=SAtest_iac@tmp"
+        - "--exclude=Test_iac@tmp"
         - "--exclude=ssh*"
   tags:
     - copy_files
