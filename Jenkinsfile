@@ -22,7 +22,7 @@ pipeline {
         stage('copy files') {
             steps {
                 ansiblePlaybook become: true,
-                    credentialsId: 'awsUsDemo',
+                    credentialsId: 'aws_us_Id',
                     disableHostKeyChecking: true, 
                     installation: 'ansible', 
                     inventory: 'Test_iac/inventories/dev.inv', 
@@ -34,7 +34,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 ansiblePlaybook become: true, 
-                    credentialsId: 'awsUsDemo',
+                    credentialsId: 'aws_us_Id',
                     disableHostKeyChecking: true, 
                     installation: 'ansible', 
                     inventory: 'Test_iac/inventories/dev.inv', 
