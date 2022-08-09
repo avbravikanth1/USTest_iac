@@ -1,2 +1,2 @@
 src_dir: "/var/lib/jenkins/workspace/raja/reactApp/"
-dest_dir: "/home/ubuntu/testApp/" 
+dest_dir: "/home/ubuntu/testApp/1" 
