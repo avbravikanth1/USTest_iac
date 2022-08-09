@@ -9,7 +9,7 @@ pipeline {
                 dir("Test_iac") {
                     git branch: 'master',
                     credentialsId: "raviGitAccess",
-                    url: 'https://github.com/avbravikanth1/USTest_iac.git
+                    url: 'https://github.com/avbravikanth1/USTest_iac.git'
                 }
             }  
         }             
